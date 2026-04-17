@@ -108,6 +108,10 @@ menu details) would continue unchanged alongside this.
 > early on for validating that the fallback logic and change-detection are actually working
 > correctly against real data.
 
+TODO: fix failing golang-ci linter
+
+TODO: fix handling of secrets in docker-compose.yml
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
