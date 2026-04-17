@@ -14,19 +14,53 @@ the menu.
 
 ## Configuration
 
+### Finding your IDs (`cmd/setup`)
+
+Run the interactive setup tool to search for your district, pick your school, and pick your
+menu — it writes `config.yaml` for you:
+
+```bash
+go run ./cmd/setup
+```
+
+Example session:
+
+```
+Search for your school district: diwa
+
+Found 1 organization(s):
+  1) Diwa Kitchen (Texas)
+Pick an organization [1-1]: 1
+
+Sites for Diwa Kitchen (14):
+  1) Diwa Kitchen Irving Blvd
+  ...
+  12) Valor North Austin
+  ...
+Pick a site [1-14]: 12
+
+Menus for Valor North Austin (5):
+  1) 6-8 Lunch
+  ...
+  4) K-5 Lunch
+  ...
+Pick a menu [1-5]: 4
+
+Wrote config.yaml
+  org_id:  1375  (Diwa Kitchen)
+  menu_id: 108888  (K-5 Lunch)
+```
+
 ### Static config (`config.yaml` — not checked into git)
 
 ```yaml
-org_id: 0     # Health-e Pro organization ID
-site_id: 0    # Health-e Pro site (school) ID
-menu_id: 0    # Health-e Pro menu ID
-evening_cron: "0 19 * * 0-4"  # night-before preview (default: 7pm Sun–Thu)
-morning_cron: "0 6 * * 1-5"   # morning re-check (default: 6am Mon–Fri)
-db_path: "/data/menus.db"      # inside the container; bind-mount ./data/ from the host
+org_id: 0      # Health-e Pro organization ID
+menu_id: 0     # Health-e Pro menu ID
+evening_cron: "0 19 * * 0-4"      # night-before preview (default: 7pm Sun–Thu)
+morning_cron: "0 6 * * 1-5"       # morning re-check (default: 6am Mon–Fri)
+db_path: "/data/menus.db"          # inside the container; bind-mount ./data/ from the host
+timezone: "America/Chicago"        # cron timezone
 ```
-
-To find your IDs, open the "My School Menus" app, select your district/school/menu, then look
-up the matching org at `menus.healthepro.com/api/organizations`.
 
 ### Posting behavior
 
@@ -43,8 +77,8 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
 ## Running locally
 
 ```bash
-cp config.yaml.example config.yaml   # fill in your IDs
-cp .env.example .env                  # add your Slack webhook URL
+go run ./cmd/setup          # generates config.yaml interactively
+cp .env.example .env        # add your Slack webhook URL
 docker-compose up
 ```
 
@@ -63,11 +97,6 @@ golangci-lint run
 ```
 
 ## Planned improvements
-
-**TODO: ID discovery utility**
-Finding the right `org_id`, `site_id`, and `menu_id` currently requires manually poking the API.
-A `cmd/setup` interactive CLI would let new users search for their district, pick their school,
-pick their menu, and write out a ready-to-use `config.yaml` — no API spelunking required.
 
 **TODO: Proactive 14-day background monitor**
 Every 15 minutes, wake up and re-fetch the next 14 days of menus. For any day where the entree
