@@ -62,6 +62,23 @@ go test ./...
 golangci-lint run
 ```
 
+## Planned improvements
+
+**TODO: ID discovery utility**
+Finding the right `org_id`, `site_id`, and `menu_id` currently requires manually poking the API.
+A `cmd/setup` interactive CLI would let new users search for their district, pick their school,
+pick their menu, and write out a ready-to-use `config.yaml` — no API spelunking required.
+
+**TODO: Proactive 14-day background monitor**
+Every 15 minutes, wake up and re-fetch the next 14 days of menus. For any day where the entree
+changed since the last fetch, immediately send a Slack message summarising the diff — how many
+days changed and what the entree switched from/to. The existing evening/morning cron posts (full
+menu details) would continue unchanged alongside this.
+
+> **NOTE:** This will almost certainly create too much noise over time, but it'll be invaluable
+> early on for validating that the fallback logic and change-detection are actually working
+> correctly against real data.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
