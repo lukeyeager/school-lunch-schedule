@@ -112,6 +112,8 @@ TODO: fix failing golang-ci linter
 
 TODO: fix handling of secrets in docker-compose.yml
 
+TODO: change default port, scrape w/ prometheus, validate metrics
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
