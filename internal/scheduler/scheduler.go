@@ -8,10 +8,10 @@ import (
 
 	"github.com/robfig/cron/v3"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/config"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/slack"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/store"
+	"github.com/lukeyeager/school-lunch-schedule/internal/config"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/slack"
+	"github.com/lukeyeager/school-lunch-schedule/internal/store"
 )
 
 // Scheduler runs the two-phase cron jobs.

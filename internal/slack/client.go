@@ -9,8 +9,8 @@ import (
 	"time"
 
 	retryablehttp "github.com/hashicorp/go-retryablehttp"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/metrics"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/metrics"
 )
 
 // Client posts messages to a Slack incoming webhook.

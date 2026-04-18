@@ -1,4 +1,4 @@
-module github.com/lukeyeager/healthepro-slack-bot
+module github.com/lukeyeager/school-lunch-schedule
 
 go 1.26.2
 

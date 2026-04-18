@@ -12,8 +12,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/metrics"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/metrics"
 )
 
 func testMetrics(t *testing.T) *metrics.Metrics {

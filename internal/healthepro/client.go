@@ -9,7 +9,7 @@ import (
 	"time"
 
 	retryablehttp "github.com/hashicorp/go-retryablehttp"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/metrics"
+	"github.com/lukeyeager/school-lunch-schedule/internal/metrics"
 )
 
 const baseURL = "https://menus.healthepro.com"

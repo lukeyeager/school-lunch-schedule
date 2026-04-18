@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
 	_ "modernc.org/sqlite" // register sqlite driver
 )
 

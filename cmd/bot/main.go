@@ -11,12 +11,12 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/config"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/metrics"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/scheduler"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/slack"
-	"github.com/lukeyeager/healthepro-slack-bot/internal/store"
+	"github.com/lukeyeager/school-lunch-schedule/internal/config"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/metrics"
+	"github.com/lukeyeager/school-lunch-schedule/internal/scheduler"
+	"github.com/lukeyeager/school-lunch-schedule/internal/slack"
+	"github.com/lukeyeager/school-lunch-schedule/internal/store"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package scheduler
 import (
 	"testing"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
 )
 
 func TestItemsEqual(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/lukeyeager/healthepro-slack-bot/internal/healthepro"
+	"github.com/lukeyeager/school-lunch-schedule/internal/healthepro"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-# healthepro-slack-bot
+# school-lunch-schedule
 
 A Slack bot that fetches a daily school lunch menu from the
 [Health-e Pro](https://www.healthepro.com/) API (the backend behind the "My School Menus" app)
