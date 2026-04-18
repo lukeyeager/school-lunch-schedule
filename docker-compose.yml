@@ -3,7 +3,7 @@ networks:
     external: true
 
 services:
-  bot:
+  school-lunch-schedule:
     build: .
     restart: unless-stopped
     volumes:
